@@ -1,5 +1,5 @@
 {
-    "name": "matt/honeys-place",
+    "name": "matt/honeys_place",
     "description": "A Drupal 8/9 Module for connecting to Honey's Place API",
     "type": "drupal-module",
     "license": "GPL-2.0-or-later",
