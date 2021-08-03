@@ -1,0 +1,16 @@
+{
+    "name": "matt/honeys-place",
+    "description": "A Drupal 8/9 Module for connecting to Honey's Place API",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Matt Campbell",
+            "email": "cascadiamatt@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "drupal/core": "^8.8 || ^9"
+    }
+}
