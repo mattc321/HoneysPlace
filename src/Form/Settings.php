@@ -193,7 +193,7 @@ class Settings extends ConfigFormBase
   private function getTestApiResponseOutput()
   {
     try {
-      $response = $this->honeyOrderManagementService->getHoneyOrderStatus('xxxx');
+      $response = $this->honeyOrderManagementService->getHoneyOrderStatus('TESTxxxx');
     } catch (Throwable $t) {
       return "<div class=\"messages messages--error\"><div>Exception occurred: {$t->getMessage()}</div></div>";
     }
