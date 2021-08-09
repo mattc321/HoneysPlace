@@ -2,7 +2,20 @@
 A Drupal 8/9 Module for connecting to Honey's Place API
 
 # Install
-- Install with composer
+- Install with composer by adding to repository to composer.json. Example:
+
+         "repositories": {
+                 "0": {
+                     "type": "composer",
+                     "url": "https://packages.drupal.org/8"
+                 },
+                 "matt/honeys_place": {
+                     "type": "vcs",
+                     "url": "https://github.com/mattc321/honeys_place.git"
+                 }
+             },
+             
+- Then you can install using 
 
          composer require matt/honeys_place
          
