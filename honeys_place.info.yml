@@ -1,0 +1,11 @@
+name: 'Honeys Place Order API Integration'
+type: module
+description: 'An integration with Honeys Place order API'
+package: Honeys Place
+version: '1.0'
+core_version_requirement: ^8 || ^9
+project: 'honeys_place'
+dependencies:
+  - commerce_order
+  - commerce_payment
+  - address

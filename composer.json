@@ -11,6 +11,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "drupal/core": "^8.8 || ^9"
+        "drupal/core": "^8.8 || ^9",
+        "drupal/commerce": "^2.20"
     }
 }

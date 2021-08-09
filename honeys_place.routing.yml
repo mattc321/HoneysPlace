@@ -1,0 +1,9 @@
+honeys_place.settings:
+  path: '/admin/config/honeys_place/settings'
+  defaults:
+    _form: '\Drupal\honeys_place\Form\Settings'
+    _title: 'Honeys Place Settings'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

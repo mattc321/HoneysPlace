@@ -1,0 +1,18 @@
+uuid: a0b65635-e653-41cb-a00d-4e3078f145ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+id: commerce_order.field_honey_order_created
+field_name: field_honey_order_created
+entity_type: commerce_order
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

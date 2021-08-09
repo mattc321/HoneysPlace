@@ -1,0 +1,15 @@
+services:
+  honeys_place.after_checkout_event_subscriber:
+    class: \Drupal\honeys_place\EventSubscriber\AfterCheckout
+    arguments: ['@honeys_place.honey_order_management', '@logger.factory']
+    tags:
+      - { name: event_subscriber }
+  honeys_place.client:
+    class: \Drupal\honeys_place\Api\Request\Client
+    arguments: ['@honeys_place.response_handler', '@config.factory']
+  honeys_place.response_handler:
+    class: \Drupal\honeys_place\Api\Response\ResponseHandler
+    arguments: ['@logger.factory']
+  honeys_place.honey_order_management:
+    class: \Drupal\honeys_place\Service\HoneyOrderManagementService
+    arguments: ['@logger.factory', '@honeys_place.client', '@config.factory']

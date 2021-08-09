@@ -1,0 +1,5 @@
+honeys_place.settings:
+  title: 'Honeys Place Module Configuration'
+  description: 'Configure the Honeys Place API settings.'
+  route_name: honeys_place.settings
+  parent: system.admin_config_ui
