@@ -198,7 +198,7 @@ class Settings extends ConfigFormBase
       return "<div class=\"messages messages--error\"><div>Exception occurred: {$t->getMessage()}</div></div>";
     }
 
-    return ($response->getCode() == 100 || $response->getCode() == 300)
+    return ($response->getStatus())
       ? '<div class="messages messages--status"><div>Connection successful!</div></div>'
       : "<div class=\"messages messages--error\"><div>
               Connection failed. 

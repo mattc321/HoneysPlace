@@ -3,13 +3,15 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 
 function honeys_place_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    case 'help.page.honeys_place':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('This is the help for Honeys Place') . '</p>';
-      return $output;
+    switch ($route_name) {
+        case 'help.page.honeys_place':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t(
+                    'Add the field_honey_order_created field to any/all order types you want to use.
+        Then configure your API credentials on the below configuration page.') . '</p>';
+            return $output;
 
-    default:
-  }
+        default:
+    }
 }
