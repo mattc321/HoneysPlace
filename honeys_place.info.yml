@@ -8,4 +8,5 @@ project: 'honeys_place'
 dependencies:
   - commerce_order
   - commerce_payment
+  - commerce_shipping
   - address

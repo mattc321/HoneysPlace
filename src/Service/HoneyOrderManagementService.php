@@ -20,7 +20,10 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class HoneyOrderManagementService
 {
-  /**
+
+    const DEFAULT_SHIP_CODE = 'P002';
+
+    /**
    * @var LoggerChannelFactory
    */
   private $loggerFactory;
@@ -65,9 +68,11 @@ class HoneyOrderManagementService
 
     $isSandboxMode = $this->config->get('honeys_place_api_use_sandbox');
 
+    $honeysPlaceShippingCode = $this->getHoneysPlaceShippingCode($commerceOrder);
+
     $orderRequest = new HoneyOrder(
       $isSandboxMode ? 'TEST'.$commerceOrder->getOrderNumber() : $commerceOrder->getOrderNumber(),
-      'P002',
+      $honeysPlaceShippingCode,
       new DateTime(),
       $this->convertOrderItems($commerceOrder),
       $address['given_name'],
@@ -164,4 +169,25 @@ class HoneyOrderManagementService
       }
     }
   }
+
+    /**
+     * @param OrderInterface $commerceOrder
+     * @return string
+     */
+    private function getHoneysPlaceShippingCode(OrderInterface $commerceOrder)
+    {
+
+        try {
+            $pluginConfig = $commerceOrder->shipments->entity->shipping_method->entity->plugin->getValue()[0];
+
+            if (isset($pluginConfig['target_plugin_configuration']) && isset($pluginConfig['target_plugin_configuration']['honeys_place_shipping_code'])) {
+                return $pluginConfig['target_plugin_configuration']['honeys_place_shipping_code'] ?? self::DEFAULT_SHIP_CODE;
+            }
+        } catch (\Throwable $t) {
+            $this->loggerFactory->get('honeys_place')->error("Could not get Honeys Place shipping code. Error: {$t->getMessage()}");
+        }
+
+        return self::DEFAULT_SHIP_CODE;
+    }
+
 }
