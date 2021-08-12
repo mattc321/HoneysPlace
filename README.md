@@ -1,6 +1,12 @@
 # HoneysPlace
 A Drupal 8/9 Module for connecting to Honey's Place API
 
+- Place orders
+- Check order status
+- Query stock status
+
+https://www.honeysplace.com/
+
 # Install
 - Install with composer by adding to repository to composer.json. Example:
 
