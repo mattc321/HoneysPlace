@@ -34,3 +34,7 @@ https://www.honeysplace.com/
          Commerce > Configuration > Orders > Order Types > Default > Edit Fields > Add Field > field_honey_order_created
 
 - Configure the API credentials on the configuration page
+
+# Developers
+
+Use service "honeys_place.honey_order_management" provided by \Drupal\honeys_place\Service\HoneyOrderManagementService
